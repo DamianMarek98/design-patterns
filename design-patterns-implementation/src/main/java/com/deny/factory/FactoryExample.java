@@ -3,7 +3,7 @@ package com.deny.factory;
 import com.deny.ImplementationExample;
 import com.deny.factory.pizzas.Pizza;
 
-public class FactoryMethodExample implements ImplementationExample {
+public class FactoryExample implements ImplementationExample {
     @Override
     public void start() {
         PizzaStore nyStore = new NYStylePizzaStore();

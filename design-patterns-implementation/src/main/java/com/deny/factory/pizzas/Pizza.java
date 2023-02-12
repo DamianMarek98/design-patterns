@@ -1,24 +1,20 @@
 package com.deny.factory.pizzas;
 
+import com.deny.factory.ingredients.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<>();
+    Dough dough;
+    Sauce sauce;
+    Veggie veggies[];
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Calms calms;
 
-    public void prepare() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Preparing ")
-                .append(name).append(System.lineSeparator())
-                .append("Tossing dough...").append(System.lineSeparator())
-                .append("Adding sauce..").append(System.lineSeparator())
-                .append("Adding toppings: ").append(System.lineSeparator());
-        toppings.forEach(topping -> sb.append("   ").append(topping).append(System.lineSeparator()));
-        System.out.println(sb);
-    }
+    public abstract void prepare();
 
     public void bake() {
         System.out.println("bake for 25 min at 350");
@@ -34,5 +30,9 @@ public abstract class Pizza {
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
