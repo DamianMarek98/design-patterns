@@ -1,7 +1,7 @@
 package com.deny.singleton;
 
 public class ChocolateBoilerSingleton {
-    private static ChocolateBoilerSingleton chocolateBoilerSingleton;
+    private static volatile ChocolateBoilerSingleton chocolateBoilerSingleton;
     private boolean empty;
     private boolean boiled;
 
@@ -10,10 +10,18 @@ public class ChocolateBoilerSingleton {
         boiled = false;
     }
 
+    /**
+     * Making this method synchronized works well for multithreaded system,
+     * but it is rather slow when we access this method a lot.
+     * Because of that we just synchronize instance creation and by making instance field volatile
+     * we ensure that all operations are done in correct order (not reorder by jit compiler or other mechanism)
+     */
     public static ChocolateBoilerSingleton getInstance() {
         if (chocolateBoilerSingleton == null) {
-            chocolateBoilerSingleton = new ChocolateBoilerSingleton();
-            System.out.println("new instance");
+            synchronized (ChocolateBoilerSingleton.class) {
+                chocolateBoilerSingleton = new ChocolateBoilerSingleton();
+                System.out.println("new instance");
+            }
         }
         return chocolateBoilerSingleton;
     }
