@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.command.SimpleCommandExample;
+import com.deny.command.RemoteControlCommandExample;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +8,7 @@ public class Main {
         //new WeatherStation().start();
         //new Cafeteria().start();
         //new FactoryExample().start();
-        new SimpleCommandExample().start();
+        //new SimpleCommandExample().start();
+        new RemoteControlCommandExample().start();
     }
 }
