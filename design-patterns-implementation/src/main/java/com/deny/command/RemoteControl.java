@@ -40,6 +40,7 @@ public class RemoteControl {
         if (undoCommand == null) {
             return;
         }
+        System.out.println("undoing:");
         undoCommand.undo();
     }
 

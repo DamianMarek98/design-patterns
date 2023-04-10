@@ -1,6 +1,7 @@
 package com.deny.command;
 
 import com.deny.ImplementationExample;
+import com.deny.command.ceilingfan.*;
 import com.deny.command.garagedoor.GarageDoor;
 import com.deny.command.garagedoor.GarageDoorCloseCommand;
 import com.deny.command.garagedoor.GarageDoorOpenCommand;
@@ -28,6 +29,16 @@ public class RemoteControlCommandExample implements ImplementationExample {
         StereoOnWithCDCommand stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
         StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
         remoteControl.setCommand(2, stereoOnWithCDCommand, stereoOffCommand);
+
+        //ceiling fan with state
+        CeilingFan ceilingFan = new CeilingFan("Test");
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanMediumCommand ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        CeilingFanLowCommand ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+        remoteControl.setCommand(3, ceilingFanHighCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(4, ceilingFanMediumCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(5, ceilingFanLowCommand, ceilingFanOffCommand);
         System.out.println(remoteControl);
 
         remoteControl.onButtonWasPushed(0);
@@ -39,6 +50,12 @@ public class RemoteControlCommandExample implements ImplementationExample {
         remoteControl.offButtonWasPushed(2);
         remoteControl.onButtonWasPushed(3);
         remoteControl.offButtonWasPushed(3);
+        remoteControl.undoButtonWasPushed();
+
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(4);
+        remoteControl.undoButtonWasPushed();
+        remoteControl.onButtonWasPushed(5);
         remoteControl.undoButtonWasPushed();
     }
 }
