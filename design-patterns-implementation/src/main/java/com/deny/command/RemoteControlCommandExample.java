@@ -8,6 +8,7 @@ import com.deny.command.garagedoor.GarageDoorOpenCommand;
 import com.deny.command.light.Light;
 import com.deny.command.light.LightOffCommand;
 import com.deny.command.light.LightOnCommand;
+import com.deny.command.macro.MacroCommand;
 import com.deny.command.stereo.Stereo;
 import com.deny.command.stereo.StereoOffCommand;
 import com.deny.command.stereo.StereoOnWithCDCommand;
@@ -39,6 +40,10 @@ public class RemoteControlCommandExample implements ImplementationExample {
         remoteControl.setCommand(3, ceilingFanHighCommand, ceilingFanOffCommand);
         remoteControl.setCommand(4, ceilingFanMediumCommand, ceilingFanOffCommand);
         remoteControl.setCommand(5, ceilingFanLowCommand, ceilingFanOffCommand);
+
+        MacroCommand partyModeOn = new MacroCommand(new Command[]{ceilingFanHighCommand, stereoOnWithCDCommand, lightOnCommand});
+        MacroCommand partyModeOff = new MacroCommand(new Command[]{ceilingFanLowCommand, stereoOffCommand, lightOffCommand});
+        remoteControl.setCommand(6, partyModeOn, partyModeOff);
         System.out.println(remoteControl);
 
         remoteControl.onButtonWasPushed(0);
@@ -56,6 +61,12 @@ public class RemoteControlCommandExample implements ImplementationExample {
         remoteControl.offButtonWasPushed(4);
         remoteControl.undoButtonWasPushed();
         remoteControl.onButtonWasPushed(5);
+        remoteControl.undoButtonWasPushed();
+
+        //party mode on/undo/off/undo
+        remoteControl.onButtonWasPushed(6);
+        remoteControl.undoButtonWasPushed();
+        remoteControl.onButtonWasPushed(6);
         remoteControl.undoButtonWasPushed();
     }
 }
