@@ -6,13 +6,14 @@ public class RemoteControl {
     private static final int NUMBER_OF_SLOTS = 7;
     private final Command[] onCommands;
     private final Command[] offCommands;
+    private Command undoCommand;
 
 
     public RemoteControl() {
         onCommands = new Command[NUMBER_OF_SLOTS];
         offCommands = new Command[NUMBER_OF_SLOTS];
 
-        Command noCommand = () -> System.out.println("Nothing happens");
+        Command noCommand = new NoCommand();
         for (int i = 0; i < NUMBER_OF_SLOTS; i++) {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
@@ -32,6 +33,14 @@ public class RemoteControl {
             throw new NoSuchSlotException(slot);
         }
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
+    }
+
+    public void undoButtonWasPushed() {
+        if (undoCommand == null) {
+            return;
+        }
+        undoCommand.undo();
     }
 
     public void offButtonWasPushed(int slot) {
@@ -39,6 +48,7 @@ public class RemoteControl {
             throw new NoSuchSlotException(slot);
         }
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
     }
 
     @Override
@@ -46,6 +56,7 @@ public class RemoteControl {
         return "RemoteControl{" +
                 "onCommands=" + Arrays.toString(onCommands) +
                 ", offCommands=" + Arrays.toString(offCommands) +
+                ", undoCommand=" + undoCommand +
                 '}';
     }
 }
