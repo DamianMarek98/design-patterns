@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.command.RemoteControlCommandExample;
+import com.deny.adapter.DuckTestDrive;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,6 +9,7 @@ public class Main {
         //new Cafeteria().start();
         //new FactoryExample().start();
         //new SimpleCommandExample().start();
-        new RemoteControlCommandExample().start();
+        //new RemoteControlCommandExample().start();
+        new DuckTestDrive().start();
     }
 }
