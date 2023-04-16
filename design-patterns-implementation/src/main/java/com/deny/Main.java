@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.adapter.DuckTestDrive;
+import com.deny.facade.HomeTheaterTestDrive;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,6 +10,7 @@ public class Main {
         //new FactoryExample().start();
         //new SimpleCommandExample().start();
         //new RemoteControlCommandExample().start();
-        new DuckTestDrive().start();
+//        new DuckTestDrive().start();
+        new HomeTheaterTestDrive().start();
     }
 }
