@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.facade.HomeTheaterTestDrive;
+import com.deny.templatemethod.TemplateMethodExample;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,6 +11,7 @@ public class Main {
         //new SimpleCommandExample().start();
         //new RemoteControlCommandExample().start();
 //        new DuckTestDrive().start();
-        new HomeTheaterTestDrive().start();
+//        new HomeTheaterTestDrive().start();
+        new TemplateMethodExample().start();
     }
 }
