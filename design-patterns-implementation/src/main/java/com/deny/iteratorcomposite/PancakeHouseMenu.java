@@ -18,7 +18,7 @@ class PancakeHouseMenu {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
     }
 
-    List<MenuItem> getMenuItems() {
-        return menuItems;
+    Iterator createIterator() {
+        return new PancakeHouseMenuIterator(menuItems);
     }
 }

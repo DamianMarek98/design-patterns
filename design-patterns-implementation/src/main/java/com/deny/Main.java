@@ -1,5 +1,6 @@
 package com.deny;
 
+import com.deny.iteratorcomposite.MenuIteratorExample;
 import com.deny.templatemethod.TemplateMethodExample;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
         //new RemoteControlCommandExample().start();
 //        new DuckTestDrive().start();
 //        new HomeTheaterTestDrive().start();
-        new TemplateMethodExample().start();
+//        new TemplateMethodExample().start();
+        new MenuIteratorExample().start();
     }
 }
