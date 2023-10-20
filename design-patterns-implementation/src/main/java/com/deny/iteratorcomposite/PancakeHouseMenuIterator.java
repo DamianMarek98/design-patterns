@@ -1,8 +1,9 @@
 package com.deny.iteratorcomposite;
 
+import java.util.Iterator;
 import java.util.List;
 
-class PancakeHouseMenuIterator implements Iterator {
+class PancakeHouseMenuIterator implements Iterator<MenuItem> {
     private final List<MenuItem> menuItems;
     private int position = 0;
 
@@ -20,5 +21,10 @@ class PancakeHouseMenuIterator implements Iterator {
         var menuItem = menuItems.get(position);
         position++;
         return menuItem;
+    }
+
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException();
     }
 }

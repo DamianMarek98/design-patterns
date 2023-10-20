@@ -1,9 +1,10 @@
 package com.deny.iteratorcomposite;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-class PancakeHouseMenu {
+class PancakeHouseMenu implements Menu {
     private final List<MenuItem> menuItems;
 
     public PancakeHouseMenu() {
@@ -18,7 +19,8 @@ class PancakeHouseMenu {
         menuItems.add(new MenuItem(name, desc, vegetarian, price));
     }
 
-    Iterator createIterator() {
+    @Override
+    public Iterator<MenuItem> createIterator() {
         return new PancakeHouseMenuIterator(menuItems);
     }
 }

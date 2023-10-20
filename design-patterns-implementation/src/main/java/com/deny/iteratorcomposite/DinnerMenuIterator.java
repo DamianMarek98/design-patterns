@@ -1,6 +1,8 @@
 package com.deny.iteratorcomposite;
 
-class DinnerMenuIterator implements Iterator {
+import java.util.Iterator;
+
+class DinnerMenuIterator implements Iterator<MenuItem> {
     private final MenuItem[] menuItems;
     private int position = 0;
 
@@ -18,5 +20,10 @@ class DinnerMenuIterator implements Iterator {
         var menuItem = menuItems[position];
         position++;
         return menuItem;
+    }
+
+    @Override
+    public void remove() {
+        throw new UnsupportedOperationException();
     }
 }

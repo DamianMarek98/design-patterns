@@ -1,8 +1,10 @@
 package com.deny.iteratorcomposite;
 
+import java.util.Iterator;
+
 class Waitress {
-    private final PancakeHouseMenu pancakeHouseMenu;
-    private final DinnerMenu dinnerMenu;
+    private final Menu pancakeHouseMenu;
+    private final Menu dinnerMenu;
 
     Waitress(PancakeHouseMenu pancakeHouseMenu, DinnerMenu dinnerMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
@@ -19,7 +21,7 @@ class Waitress {
         printMenu(dinnerMenuIterator);
     }
 
-    private void printMenu(Iterator iterator) {
+    private void printMenu(Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
             var menuItem = iterator.next();
             System.out.println(menuItem.name);

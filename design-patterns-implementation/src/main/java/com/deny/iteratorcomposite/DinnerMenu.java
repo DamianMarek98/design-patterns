@@ -1,6 +1,8 @@
 package com.deny.iteratorcomposite;
 
-public class DinnerMenu {
+import java.util.Iterator;
+
+public class DinnerMenu implements Menu {
     private static final int MAX_ITEMS = 6;
     private final MenuItem[] menuItems;
     private int numberOfItems = 0;
@@ -22,7 +24,8 @@ public class DinnerMenu {
         numberOfItems++;
     }
 
-    Iterator createIterator() {
+    @Override
+    public Iterator<MenuItem> createIterator() {
         return new DinnerMenuIterator(menuItems);
     }
 }

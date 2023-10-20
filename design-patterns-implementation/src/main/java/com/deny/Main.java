@@ -1,7 +1,6 @@
 package com.deny;
 
 import com.deny.iteratorcomposite.MenuIteratorExample;
-import com.deny.templatemethod.TemplateMethodExample;
 
 public class Main {
     public static void main(String[] args) {
