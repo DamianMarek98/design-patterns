@@ -3,7 +3,7 @@ package com.deny.iteratorcomposite.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-class Menu extends MenuComponent {
+class Menu implements MenuComponent {
     private final List<MenuComponent> menuComponents = new ArrayList<>();
     private final String name;
     private final String description;
@@ -29,19 +29,19 @@ class Menu extends MenuComponent {
     }
 
     @Override
-    public String getName() {
+    public String name() {
         return name;
     }
 
     @Override
-    public String getDescription() {
+    public String description() {
         return description;
     }
 
     @Override
     public void print() {
-        System.out.print("\n" + getName());
-        System.out.println(", " + getDescription());
+        System.out.print("\n" + name());
+        System.out.println(", " + description());
         System.out.println("------------------");
         menuComponents.forEach(MenuComponent::print);
     }

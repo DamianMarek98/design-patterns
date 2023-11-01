@@ -1,35 +1,35 @@
 package com.deny.iteratorcomposite.composite;
 
-public abstract class MenuComponent {
-    public void add(MenuComponent menuComponent) {
+public interface MenuComponent {
+    default void add(MenuComponent menuComponent) {
         throw new UnsupportedOperationException();
     }
 
-    public void remove(MenuComponent menuComponent) {
+    default void remove(MenuComponent menuComponent) {
         throw new UnsupportedOperationException();
     }
 
-    public MenuComponent getChild(int i) {
+    default MenuComponent getChild(int i) {
         throw new UnsupportedOperationException();
     }
 
-    public String getName() {
+    default String name() {
         throw new UnsupportedOperationException();
     }
 
-    public String getDescription() {
+    default String description() {
         throw new UnsupportedOperationException();
     }
 
-    public double getPrice() {
+    default double price() {
         throw new UnsupportedOperationException();
     }
 
-    public boolean isVegetarian() {
+    default boolean vegetarian() {
         throw new UnsupportedOperationException();
     }
 
-    public void print() {
+    default void print() {
         throw new UnsupportedOperationException();
     }
 }
