@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.iteratorcomposite.MenuIteratorExample;
+import com.deny.iteratorcomposite.composite.MenuCompositeExample;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +13,7 @@ public class Main {
 //        new DuckTestDrive().start();
 //        new HomeTheaterTestDrive().start();
 //        new TemplateMethodExample().start();
-        new MenuIteratorExample().start();
+//        new MenuIteratorExample().start();
+        new MenuCompositeExample().start();
     }
 }
