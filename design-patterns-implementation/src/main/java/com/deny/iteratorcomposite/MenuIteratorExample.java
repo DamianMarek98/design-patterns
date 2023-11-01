@@ -7,7 +7,8 @@ public class MenuIteratorExample implements ImplementationExample {
     public void start() {
         var pancakeHouseMenu = new PancakeHouseMenu();
         var dinnerMenu = new DinnerMenu();
-        var waitress = new Waitress(pancakeHouseMenu, dinnerMenu);
+        var cafeMenu = new CafeMenu();
+        var waitress = new Waitress(pancakeHouseMenu, dinnerMenu, cafeMenu);
         waitress.printMenu();
     }
 }
