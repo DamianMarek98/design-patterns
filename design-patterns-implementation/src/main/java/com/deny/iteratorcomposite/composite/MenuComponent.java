@@ -1,6 +1,6 @@
 package com.deny.iteratorcomposite.composite;
 
-abstract class MenuComponent {
+public abstract class MenuComponent {
     public void add(MenuComponent menuComponent) {
         throw new UnsupportedOperationException();
     }
