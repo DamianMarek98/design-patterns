@@ -1,10 +1,10 @@
 package com.deny.state;
 
 public class GumballMachine {
-    private State soldOutState;
-    private State noQuarterState;
-    private State hasQuarterState;
-    private State soldState;
+    private final State soldOutState;
+    private final State noQuarterState;
+    private final State hasQuarterState;
+    private final State soldState;
 
     private State state;
 
