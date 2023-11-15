@@ -1,6 +1,6 @@
 package com.deny;
 
-import com.deny.iteratorcomposite.composite.MenuCompositeExample;
+import com.deny.state.GumballMachineTestDrive;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +14,7 @@ public class Main {
 //        new HomeTheaterTestDrive().start();
 //        new TemplateMethodExample().start();
 //        new MenuIteratorExample().start();
-        new MenuCompositeExample().start();
+//        new MenuCompositeExample().start();
+        new GumballMachineTestDrive().start();
     }
 }
